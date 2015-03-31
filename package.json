@@ -1,0 +1,36 @@
+{
+  "name": "cold-store",
+  "version": "1.0.0",
+  "description": "Local Database that syncs to external http endpoint when available",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kevnz/cold-store.git"
+  },
+  "keywords": [
+    "storage",
+    "browser",
+    "sync",
+    "data"
+  ],
+  "author": "Kevin Isom <kevin.isom@gmail.com>",
+  "license": "Mozilla",
+  "bugs": {
+    "url": "https://github.com/Kevnz/cold-store/issues"
+  },
+  "homepage": "https://github.com/Kevnz/cold-store",
+  "dependencies": {
+    "idb-wrapper": "^1.4.1",
+    "sift": "^1.1.0",
+    "whatwg-fetch": "^0.7.0"
+  },
+  "devDependencies": {
+    "babelify": "^5.0.4",
+    "browserify": "^9.0.3",
+    "gulp": "^3.8.11",
+    "uglify": "^0.1.3"
+  }
+}
