@@ -12,10 +12,7 @@ export default class ColdStore {
     find(query, callback) {
     	let q;
     	if (typeof query === 'object' && typeof callback === 'function') {
-    		console.log('sift that thing');
-    		//console.log(this.collection);
     		let result = sift(query, this.collection);
-    		console.log('result of the sift', result);
     		callback(null, result);
     		return;
     	}
