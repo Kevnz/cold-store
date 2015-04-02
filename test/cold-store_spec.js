@@ -1,8 +1,14 @@
 import ColdStore from '../index';
-import DataCollection from '../lib/data-collection'
 import assert from 'assert';
+
 describe('The API', () => {
 	describe('the initialization of the module', () => {
+		it('should throw if no collection is given', function (done) {
+			assert.throws(() => {
+				new ColdStore();
+			}, Error);
+			done();
+		});
 		it('should take a db name in the ctor', (done) => {
 			var store = new ColdStore('items');
 			assert.ok(store !== null);
@@ -68,15 +74,5 @@ describe('The API', () => {
 					});
 				});
 			});
-	});
-});
-describe('The DataCollection Singleton', () => {
-	it('should return an array for the collection', function (done) {
-
-		let collection = DataCollection.getCollection('items');
-		assert.ok(collection.length === 0);
-		collection.push({test:true});
-		assert.ok(DataCollection.getCollection('items').length === 1);
-		done();
 	});
 });
