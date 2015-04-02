@@ -1,12 +1,16 @@
 import sift from 'sift';
+import DataCollection from './lib/data-collection';
 
 export default class ColdStore {
     constructor(props) {
-    	this.collection = [];
     	if (typeof props === 'string') {
     		this.setDB = props;
+			this.collection = DataCollection.getCollection(props);
+    	} 
+    	console.log(props);
+    	if(props === undefined) {
+    		throw new Error('ColdStore requires a collection item')
     	}
-
         super(props);
     }
     find(query, callback) {
