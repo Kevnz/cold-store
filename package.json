@@ -4,7 +4,7 @@
   "description": "Local Database that syncs to external http endpoint when available",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./test/index.js --compilers js:babel/register"
+    "test": "mocha ./test/*.js --compilers js:babel/register"
   },
   "repository": {
     "type": "git",
