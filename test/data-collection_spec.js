@@ -1,7 +1,8 @@
 import DataCollection from '../lib/data-collection';
 import assert from 'assert';
-const FIRST_COLLECTION = Symbol('first');
-const SECOND_COLLECTION = Symbol('second');
+const FIRST_COLLECTION = 'first';
+const SECOND_COLLECTION = 'second';
+
 describe('The DataCollection Singleton', () => {
 	it('should return an array for the collection', function (done) {
 

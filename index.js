@@ -3,20 +3,24 @@ import DataCollection from './lib/data-collection';
 
 export default class ColdStore {
     constructor(props) {
+        if(props === undefined) {
+            throw new Error('ColdStore requires at least a collection item')
+        }
     	if (typeof props === 'string') {
     		this.setDB = props;
 			this.collection = DataCollection.getCollection(props);
-    	} 
-    	console.log(props);
-    	if(props === undefined) {
-    		throw new Error('ColdStore requires a collection item')
-    	}
+    	} else {
+            this.setDB = props.collection;
+            this.collection = DataCollection.getCollection(props);
+        }
+    	
+
         super(props);
     }
     find(query, callback) {
     	let q;
     	if (typeof query === 'object' && typeof callback === 'function') {
-    		let result = sift(query, this.collection);
+    		let result = sift(query, this.collection.data);
     		callback(null, result);
     		return;
     	}
@@ -34,7 +38,8 @@ export default class ColdStore {
     	callback(null, item);
     }
     delete(query, callback) {
-    	this.collection = sift(query,this.collection);
+    	let data = sift(query, this.collection.data);
+        this.collection.data = data;
     	callback(null, null);
     }
 }

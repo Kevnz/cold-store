@@ -46,6 +46,12 @@ describe('The API', () => {
 			assert.ok(typeof store.delete === 'function');
 			done();
 		});
+
+		it('should take a config object in the constructor', function (done) {
+			let store = new ColdStore({collection: 'items', url : 'http://api.example.com'});
+			assert.ok(store !== null);
+			done();
+		});
 	});
 	describe('how items are saved, retrieved and removed ', () => {
 			let db = new ColdStore('items');
