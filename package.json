@@ -4,7 +4,7 @@
   "description": "Local Database that syncs to external http endpoint when available",
   "main": "index.js",
   "scripts": {
-    "test": "jest --config=jest.config.js --detectOpenHandles --forceExit --testPathPattern='(lib).*(__tests__).*.test.js'"
+    "test": "jest --config=jest.config.js --detectOpenHandles --forceExit --testPathPattern='(src).*(__tests__).*.test.js'"
   },
   "repository": {
     "type": "git",
