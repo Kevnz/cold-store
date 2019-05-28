@@ -36,6 +36,9 @@ const newUser = User.create({
   firstName: 'Test',
   lastName: 'Name',
   email: 'test@example.com',
-})
+}) // save to local
 
+newUser.lastName = 'Last'
+// newUser.isDirty === true
+User.store(newUser) // puts updated user into local store
 console.log('The new user', newUser)
